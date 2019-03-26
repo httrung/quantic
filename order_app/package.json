@@ -1,0 +1,53 @@
+{
+  "name": "payment_app",
+  "version": "1.0.0",
+  "description": "payment application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/httrung/quantic"
+  },
+  "keywords": [
+    "payment",
+    "backend",
+    "nodejs",
+    "expressjs",
+    "sequenlizejs"
+  ],
+  "author": "TrungHoang",
+  "license": "ISC",
+  "homepage": "https://github.com/httrung/quantic",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-bearer-token": "^2.2.0",
+    "express-fileupload": "^0.4.0",
+    "gulp": "^4.0.0",
+    "gulp-mysql-command-file-processor": "^1.0.5",
+    "gulp-stream-to-promise": "^0.1.0",
+    "helmet": "^3.12.0",
+    "http-status-codes": "^1.3.0",
+    "is-empty": "^1.2.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "mysql2": "^1.5.3",
+    "node-uuid": "^1.4.8",
+    "nodemon": "^1.17.3",
+    "promise-fs": "^1.3.0",
+    "sequelize": "^4.37.6",
+    "swagger-ui-express": "^4.0.2",
+    "useragent": "^2.3.0",
+    "validator": "^10.3.0",
+    "winston": "^2.4.1",
+    "yamljs": "^0.3.0"
+  }
+}

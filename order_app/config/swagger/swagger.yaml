@@ -1,0 +1,107 @@
+openapi: 3.0.0
+servers:
+  - description: Order APIs documents
+    url: http://localhost:8080/api
+info:
+  description: Order APIs Swagger
+  version: '1.0.0'
+  title: Order APIs Document
+  contact:
+    email: hoang.thanh.trung@quantic.com.vn
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /orders:
+    post:
+      tags:
+        - Order
+      summary: Create an order
+      operationId: addOrder
+      description:
+        Create an order
+      requestBody:
+        description: Order *data*
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'          
+      responses:
+        '200':
+          description: Created order success
+          content:
+            application/json:              
+              schema:
+                type: object
+        '400':
+          description: Created order fail  
+  /orders/{id}/cancel:
+    put:
+      tags:
+        - Order
+      summary: Cancel order
+      operationId: cancelOrder
+      parameters:
+      - name: 'id'
+        in: 'path'
+        description: 'ID of order'
+        required: true
+        schema:
+          type: integer
+      description: |
+        Cancel order by Id
+      responses:
+        '200':
+          description: Cancel order success
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Cancel order fail
+  /orders/{id}/status:
+    get:
+      tags:
+        - Order
+      summary: Check order status
+      operationId: checkOrderStatus
+      parameters:
+      - name: 'id'
+        in: 'path'
+        description: 'ID of order'
+        required: true
+        schema:
+          type: integer
+      description: |
+        Check order status by Id
+      responses:
+        '200':
+          description: check order status success
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: check order status fail
+components:
+  schemas: 
+    Order:
+      type: object
+      properties:
+        stateId:
+          type: number
+          example: 1
+        name:
+          type: string
+          example: 'Order new TV'
+        notes:
+          type: string
+          example: ''
+        orderDate:
+          type: string
+          example: '2019-03-26 11:39:38'
+        total:
+          type: number
+          example: 100   
+    

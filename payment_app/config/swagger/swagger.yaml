@@ -1,0 +1,51 @@
+openapi: 3.0.0
+servers:
+  - description: Payment APIs documents
+    url: http://localhost:8080/api
+info:
+  description: Payment APIs Swagger
+  version: '1.0.0'
+  title: Payment APIs Document
+  contact:
+    email: hoang.thanh.trung@quantic.com.vn
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /checkout:
+    post:
+      tags:
+        - Payment
+      summary: Checkout payment
+      operationId: checkout
+      description:
+        Checkout payment
+      requestBody:
+        description: Checkout payment
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'          
+      responses:
+        '200':
+          description: Checkout payment success
+          content:
+            application/json:              
+              schema:
+                type: object
+        '400':
+          description: Checkout payment fail  
+  
+components:
+  schemas: 
+    Payment:
+      type: object
+      properties:
+        orderId:
+          type: number
+          example: 1        
+        total:
+          type: number
+          example: 100   
+    
