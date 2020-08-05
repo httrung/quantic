@@ -30,7 +30,7 @@
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "express-bearer-token": "^2.2.0",
-    "express-fileupload": "^0.4.0",
+    "express-fileupload": "^1.1.9",
     "gulp": "^4.0.0",
     "gulp-mysql-command-file-processor": "^1.0.5",
     "gulp-stream-to-promise": "^0.1.0",
